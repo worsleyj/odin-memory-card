@@ -9,6 +9,8 @@ export default function Card() {
     if (clicked === "false") {
       setClicked("true");
       setScore(score + 1);
+    } else {
+      alert("already clicked!");
     }
   }
   return (
