@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import joe from "../assets/joe.jpg";
 import "../styles/Card.css";
 
 export default function Card() {
