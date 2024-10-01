@@ -4,6 +4,7 @@ import "../styles/Card.css";
 
 export default function Card() {
   const [image, setImage] = useState("");
+  const [name, setName] = useState("Pokemon");
   const [clicked, setClicked] = useState("false");
   const [score, setScore] = useState(0);
   const pokemonNumber = Math.floor(Math.random() * 151);
@@ -14,6 +15,7 @@ export default function Card() {
       );
       let pokemon = await data.json();
       setImage(pokemon.sprites.front_default);
+      setName(pokemon.name);
     }
     fetchPokemon();
   }, []);
@@ -29,8 +31,8 @@ export default function Card() {
   return (
     <>
       <div onClick={selectCard} className="card-container">
-        <img src={image} alt="pokemon" className="card"></img>
-        <h2>Joe</h2>
+        <img src={image} alt={name} className="card"></img>
+        <h2>{name}</h2>
         <h6>{score}</h6>
         <h6>{clicked}</h6>
       </div>
