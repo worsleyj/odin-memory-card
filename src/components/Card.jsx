@@ -6,10 +6,12 @@ export default function Card() {
   const [image, setImage] = useState("");
   const [clicked, setClicked] = useState("false");
   const [score, setScore] = useState(0);
-
+  const pokemonNumber = Math.floor(Math.random() * 151);
   useEffect(() => {
     async function fetchPokemon() {
-      let data = await fetch("https://pokeapi.co/api/v2/pokemon/1");
+      let data = await fetch(
+        "https://pokeapi.co/api/v2/pokemon/" + pokemonNumber
+      );
       let pokemon = await data.json();
       setImage(pokemon.sprites.front_default);
     }
