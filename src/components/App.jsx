@@ -1,11 +1,14 @@
 import { useState } from "react";
-import "./styles/App.css";
+import Card from "../components/Card";
+import "../styles/App.css";
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
     <>
+      <Card />
+
       {/* <div>
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />

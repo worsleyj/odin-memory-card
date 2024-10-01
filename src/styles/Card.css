@@ -7,4 +7,5 @@
   flex-direction: column;
   border: white solid 1px;
   border-radius: 12px;
+  cursor: pointer;
 }
