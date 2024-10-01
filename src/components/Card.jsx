@@ -6,7 +6,7 @@ export default function Card() {
   const [name, setName] = useState("Pokemon");
   const [clicked, setClicked] = useState("false");
   const [score, setScore] = useState(0);
-  const pokemonNumber = Math.floor(Math.random() * 151);
+  const pokemonNumber = Math.floor(Math.random() * 150 + 1);
   useEffect(() => {
     async function fetchPokemon() {
       let data = await fetch(
