@@ -11,7 +11,8 @@
 }
 
 .card-container:hover {
-  opacity: 0.6;
+  opacity: 0.8;
+  filter: drop-shadow(0 0 2em #ffffffaa);
 }
 
 .card-container > h2 {
@@ -20,4 +21,19 @@
 
 h2:first-letter {
   text-transform: uppercase;
+}
+
+@keyframes im {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  img:hover {
+    animation: im infinite 20s linear;
+  }
 }
