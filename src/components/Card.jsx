@@ -3,7 +3,13 @@ import "../styles/Card.css";
 
 const uniqueNumbers = [];
 
-export default function Card({ score, setScore, highScore, setHighScore }) {
+export default function Card({
+  score,
+  setScore,
+  highScore,
+  setHighScore,
+  generateCards,
+}) {
   const [image, setImage] = useState("");
   const [name, setName] = useState("Pokemon");
   const [clicked, setClicked] = useState("false");
@@ -42,6 +48,7 @@ export default function Card({ score, setScore, highScore, setHighScore }) {
         setHighScore(score);
       }
       setScore(0);
+      generateCards(1);
     }
   }
 }
