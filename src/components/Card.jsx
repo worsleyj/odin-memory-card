@@ -34,7 +34,6 @@ export default function Card({
       <div onClick={selectCard} className="card-container">
         <img src={image} alt={name} className="card"></img>
         <h2>{name}</h2>
-        <h6>{score}</h6>
       </div>
     </>
   );

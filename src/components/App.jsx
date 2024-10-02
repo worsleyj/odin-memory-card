@@ -6,13 +6,13 @@ import "../styles/App.css";
 function App() {
   const [highScore, setHighScore] = useState(localStorage.getItem("highScore"));
   const [score, setScore] = useState(0);
-  const cardNumber = 5;
+  const cardNumber = 24;
   let cardArray = [];
   generateCards(cardNumber);
   return (
     <>
       <Header score={score} highScore={highScore} />
-      {cardArray}
+      <div className="main-container">{cardArray}</div>
     </>
   );
   /* Randomize array in-place using Durstenfeld shuffle algorithm */
@@ -25,8 +25,6 @@ function App() {
     }
   }
   function generateCards(cardNumber) {
-    console.log("gen");
-
     cardArray = [];
     let i = 0;
     while (i < cardNumber) {
