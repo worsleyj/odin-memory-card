@@ -9,7 +9,7 @@ function App() {
   const cardNumber = 12;
   return (
     <>
-      <Header />
+      <Header score={score} highScore={highScore} />
       {[...Array(cardNumber).keys()].map((key) => (
         <Card
           key={key}
