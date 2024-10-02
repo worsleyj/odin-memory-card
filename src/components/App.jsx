@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Header from "./Header";
 import Card from "../components/Card";
 import "../styles/App.css";
 
@@ -8,7 +9,7 @@ function App() {
 
   return (
     <>
-      {/* <Header /> */}
+      <Header highScore={highScore} />
       <Card
         score={score}
         setScore={setScore}
