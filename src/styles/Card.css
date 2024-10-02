@@ -9,3 +9,7 @@
   border-radius: 12px;
   cursor: pointer;
 }
+
+h2:first-letter {
+  text-transform: uppercase;
+}

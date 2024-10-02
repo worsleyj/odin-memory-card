@@ -34,6 +34,15 @@ export default function Card() {
       </div>
     </>
   );
+
+  function selectCard() {
+    if (clicked === "false") {
+      setClicked("true");
+      setScore(score + 1);
+    } else {
+      alert("already clicked!");
+    }
+  }
 }
 
 function generatePokemonNumber() {
@@ -43,13 +52,4 @@ function generatePokemonNumber() {
   }
   uniqueNumbers.push(pokemonNumber);
   return pokemonNumber;
-}
-
-function selectCard() {
-  if (clicked === "false") {
-    setClicked("true");
-    setScore(score + 1);
-  } else {
-    alert("already clicked!");
-  }
 }
