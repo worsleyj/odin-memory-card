@@ -4,14 +4,13 @@ import Card from "../components/Card";
 import "../styles/App.css";
 
 function App() {
-  const [highScore, setHighScore] = useState(0);
+  const [highScore, setHighScore] = useState(localStorage.getItem("highScore"));
   const [score, setScore] = useState(0);
   const cardNumber = 5;
   let cardArray = [];
   generateCards(cardNumber);
   return (
     <>
-      <button onClick={shuffleArray(cardArray)}></button>
       <Header score={score} highScore={highScore} />
       {cardArray}
     </>
@@ -26,12 +25,15 @@ function App() {
     }
   }
   function generateCards(cardNumber) {
+    console.log("gen");
+
     cardArray = [];
     let i = 0;
     while (i < cardNumber) {
       i++;
       cardArray.push(
         <Card
+          onClick={shuffleArray(cardArray)}
           key={i}
           score={score}
           setScore={setScore}

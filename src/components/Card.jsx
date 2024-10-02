@@ -46,9 +46,10 @@ export default function Card({
     } else {
       if (score > highScore) {
         setHighScore(score);
+        localStorage.setItem("highScore", score);
       }
       setScore(0);
-      generateCards(1);
+      location.reload();
     }
   }
 }
