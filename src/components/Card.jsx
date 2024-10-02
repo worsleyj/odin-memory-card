@@ -3,11 +3,10 @@ import "../styles/Card.css";
 
 const uniqueNumbers = [];
 
-export default function Card() {
+export default function Card({ score, setScore, highScore, setHighScore }) {
   const [image, setImage] = useState("");
   const [name, setName] = useState("Pokemon");
   const [clicked, setClicked] = useState("false");
-  const [score, setScore] = useState(0);
 
   useEffect(() => {
     async function fetchPokemon() {
@@ -30,7 +29,6 @@ export default function Card() {
         <img src={image} alt={name} className="card"></img>
         <h2>{name}</h2>
         <h6>{score}</h6>
-        <h6>{clicked}</h6>
       </div>
     </>
   );
@@ -40,7 +38,10 @@ export default function Card() {
       setClicked("true");
       setScore(score + 1);
     } else {
-      alert("already clicked!");
+      if (score > highScore) {
+        setHighScore(score);
+      }
+      setScore(0);
     }
   }
 }
